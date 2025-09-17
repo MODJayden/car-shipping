@@ -1,0 +1,452 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Car Platform Custom Colors */
+  --color-car-primary: var(--car-primary);
+  --color-car-secondary: var(--car-secondary);
+  --color-car-accent: var(--car-accent);
+  --color-car-success: var(--car-success);
+  --color-car-warning: var(--car-warning);
+  --color-car-danger: var(--car-danger);
+  --color-car-luxury: var(--car-luxury);
+  --color-car-gold: var(--car-gold);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /* Car Platform Colors - Automotive Professional Theme */
+  --car-primary: oklch(0.32 0.013 250); /* slate-800 equivalent */
+  --car-secondary: oklch(0.4 0.016 250); /* slate-700 equivalent */
+  --car-accent: oklch(0.68 0.17 220); /* sky-500 equivalent */
+  --car-success: oklch(0.65 0.15 160); /* emerald-500 equivalent */
+  --car-warning: oklch(0.75 0.15 70); /* amber-500 equivalent */
+  --car-danger: oklch(0.63 0.25 27); /* red-500 equivalent */
+  --car-luxury: oklch(0.2 0 0); /* gray-900 for luxury */
+  --car-gold: oklch(0.8 0.15 85); /* amber-400 for gold accents */
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+
+  /* Car Platform Dark Mode Colors */
+  --car-primary: oklch(0.68 0.17 220); /* sky-500 for dark primary */
+  --car-secondary: oklch(0.58 0.17 230); /* indigo-500 for dark secondary */
+  --car-accent: oklch(0.7 0.15 190); /* cyan-500 for dark accent */
+  --car-success: oklch(0.65 0.15 160); /* emerald-500 stays same */
+  --car-warning: oklch(0.75 0.15 70); /* amber-500 stays same */
+  --car-danger: oklch(0.7 0.2 27); /* red-400 for dark danger */
+  --car-luxury: oklch(0.68 0.17 220); /* blue-500 for dark luxury */
+  --car-gold: oklch(0.8 0.15 85); /* amber-400 stays same */
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  /* Car Platform Button Components */
+  .btn-car-primary {
+    @apply bg-car-primary text-white hover:opacity-90 px-4 py-2 rounded-lg font-medium transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+
+  .btn-car-secondary {
+    @apply bg-car-secondary text-white hover:opacity-90 px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-car-accent {
+    @apply bg-car-accent text-white hover:opacity-90 px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-car-success {
+    @apply bg-car-success text-white hover:opacity-90 px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-car-warning {
+    @apply bg-car-warning text-white hover:opacity-90 px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-car-danger {
+    @apply bg-car-danger text-white hover:opacity-90 px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  .btn-car-outline {
+    @apply border border-car-primary text-car-primary hover:bg-car-primary hover:text-white px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+
+  /* Car Platform Card Components */
+  .car-listing-card {
+    @apply bg-card border border-border rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden;
+  }
+
+  .car-featured-card {
+    @apply bg-gradient-to-br from-car-luxury to-car-secondary text-white rounded-xl shadow-lg overflow-hidden;
+  }
+
+  .car-price-card {
+    @apply bg-gradient-to-r from-car-accent to-car-success text-white rounded-lg p-6 shadow-md;
+  }
+
+  /* Status Components for Car Platform */
+  .status-available {
+    @apply bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-sold {
+    @apply bg-red-50 text-red-700 border border-red-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-reserved {
+    @apply bg-yellow-50 text-yellow-700 border border-yellow-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-shipped {
+    @apply bg-blue-50 text-blue-700 border border-blue-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-payment-paid {
+    @apply bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-payment-pending {
+    @apply bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .status-payment-overdue {
+    @apply bg-red-50 text-red-700 border border-red-200 px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  /* Navigation Components */
+  .car-navbar {
+    @apply bg-car-primary text-white shadow-lg border-b border-car-secondary;
+  }
+
+  .car-navbar-brand {
+    @apply text-xl font-bold text-white hover:text-gray-200 transition-colors duration-200;
+  }
+
+  .car-navbar-link {
+    @apply text-gray-200 hover:text-white px-3 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+
+  .car-navbar-link-active {
+    @apply bg-car-secondary text-white;
+  }
+
+  /* Form Components */
+  .car-input {
+    @apply border border-input focus:border-car-accent focus:ring-2 focus:ring-car-accent/20 rounded-lg px-3 py-2 w-full transition-all duration-200 bg-background;
+  }
+
+  .car-select {
+    @apply border border-input focus:border-car-accent focus:ring-2 focus:ring-car-accent/20 rounded-lg px-3 py-2 w-full transition-all duration-200 bg-background;
+  }
+
+  .car-textarea {
+    @apply border border-input focus:border-car-accent focus:ring-2 focus:ring-car-accent/20 rounded-lg px-3 py-2 w-full transition-all duration-200 bg-background resize-none;
+  }
+
+  /* Dashboard Components */
+  .car-dashboard-stat {
+    @apply bg-card p-6 rounded-xl border border-border shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+
+  .car-dashboard-stat-value {
+    @apply text-3xl font-bold text-foreground;
+  }
+
+  .car-dashboard-stat-label {
+    @apply text-muted-foreground text-sm font-medium mt-2;
+  }
+
+  .car-dashboard-stat-trend-up {
+    @apply text-car-success text-sm font-medium flex items-center gap-1;
+  }
+
+  .car-dashboard-stat-trend-down {
+    @apply text-car-danger text-sm font-medium flex items-center gap-1;
+  }
+
+  /* Payment Components */
+  .payment-installment-card {
+    @apply bg-gradient-to-br from-car-accent to-car-success text-white rounded-xl p-6 shadow-lg;
+  }
+
+  .payment-amount-large {
+    @apply text-4xl font-bold text-white mb-2;
+  }
+
+  .payment-due-date {
+    @apply text-white/80 text-sm font-medium;
+  }
+
+  /* Car Specification Components */
+  .car-spec-grid {
+    @apply grid grid-cols-2 md:grid-cols-4 gap-4 p-4 bg-muted/50 rounded-lg;
+  }
+
+  .car-spec-item {
+    @apply text-center;
+  }
+
+  .car-spec-value {
+    @apply text-lg font-semibold text-foreground;
+  }
+
+  .car-spec-label {
+    @apply text-sm text-muted-foreground mt-1;
+  }
+
+  /* Filter Components */
+  .car-filter-chip {
+    @apply bg-muted hover:bg-car-accent hover:text-white px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer border border-transparent hover:border-car-accent;
+  }
+
+  .car-filter-chip-active {
+    @apply bg-car-accent text-white border-car-accent;
+  }
+}
+
+@layer utilities {
+  /* Car Platform Utility Classes */
+  .text-car-primary {
+    color: var(--car-primary);
+  }
+
+  .text-car-secondary {
+    color: var(--car-secondary);
+  }
+
+  .text-car-accent {
+    color: var(--car-accent);
+  }
+
+  .text-car-success {
+    color: var(--car-success);
+  }
+
+  .text-car-warning {
+    color: var(--car-warning);
+  }
+
+  .text-car-danger {
+    color: var(--car-danger);
+  }
+
+  .text-car-luxury {
+    color: var(--car-luxury);
+  }
+
+  .text-car-gold {
+    color: var(--car-gold);
+  }
+
+  .bg-car-primary {
+    background-color: var(--car-primary);
+  }
+
+  .bg-car-secondary {
+    background-color: var(--car-secondary);
+  }
+
+  .bg-car-accent {
+    background-color: var(--car-accent);
+  }
+
+  .bg-car-success {
+    background-color: var(--car-success);
+  }
+
+  .bg-car-warning {
+    background-color: var(--car-warning);
+  }
+
+  .bg-car-danger {
+    background-color: var(--car-danger);
+  }
+
+  .bg-car-luxury {
+    background-color: var(--car-luxury);
+  }
+
+  .bg-car-gold {
+    background-color: var(--car-gold);
+  }
+
+  .border-car-primary {
+    border-color: var(--car-primary);
+  }
+
+  .border-car-accent {
+    border-color: var(--car-accent);
+  }
+
+  /* Gradient Utilities */
+  .gradient-car-primary {
+    background: linear-gradient(
+      135deg,
+      var(--car-primary),
+      var(--car-secondary)
+    );
+  }
+
+  .gradient-car-accent {
+    background: linear-gradient(135deg, var(--car-accent), var(--car-success));
+  }
+
+  .gradient-car-luxury {
+    background: linear-gradient(135deg, var(--car-luxury), var(--car-gold));
+  }
+
+  /* Animation Utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
