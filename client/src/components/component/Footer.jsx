@@ -22,8 +22,10 @@ import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Badge } from "../ui/badge";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Footer = () => {
+  const { isAuth, user } = useSelector((state) => state.user);
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-gray-800 dark:from-gray-950 dark:to-gray-900 text-white pt-16 pb-8">
       {/* Main Footer Content */}
@@ -117,7 +119,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/track"
+                  to= {isAuth ? "/track" : "/login"}
                   className="text-gray-300 hover:text-white transition-colors flex items-center"
                 >
                   <ArrowRight className="w-3 h-3 mr-2" />
